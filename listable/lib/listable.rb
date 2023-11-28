@@ -1,6 +1,11 @@
-require "listable/version"
-require "listable/engine"
+require 'listable/version'
+require 'listable/engine'
 
 module Listable
-  # Your code goes here...
+  mattr_accessor :sample_attribute
+  @@sample_attribute = 'default'
+
+  def self.configure
+    yield self
+  end
 end
